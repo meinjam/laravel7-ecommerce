@@ -11,9 +11,10 @@
                     <div class="card-body">
                         <h4 class="card-title">{{ $product->name }}</h4>
                         <p class="card-text">{{ $product->description }}</p>
+                        <h4 class="card-text">${{ $product->price }}</h4>
                     </div>
                     <div class="card-body">
-                        <a href="">Add to cart</a>
+                        <a href="{{ route('cart.add', $product->id) }}">Add to cart</a>
                     </div>
                 </div>
             </div>
