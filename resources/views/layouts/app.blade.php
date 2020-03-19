@@ -44,8 +44,12 @@
                             <a class="nav-link" href="{{ route('cart.index') }}">
                                 <i class="fas fa-cart-arrow-down fa-2x text-info"></i>
                                 <div class="badge badge-danger">
-                                    {{-- {{Cart::session(auth()->id())->getTotalQuantity()}} --}}
-                                    {{Cart::session(auth()->id())->getContent()->count()}}
+                                    @auth
+                                        {{-- {{Cart::session(auth()->id())->getTotalQuantity()}} --}}
+                                        {{Cart::session(auth()->id())->getContent()->count()}}
+                                    @else
+                                        0
+                                    @endauth
                                 </div>
                             </a>
                         </li>

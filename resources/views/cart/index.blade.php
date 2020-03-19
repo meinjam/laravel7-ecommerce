@@ -32,5 +32,5 @@
         </tbody>
     </table>
     <h3>Total Price: ${{ \Cart::session(auth()->id())->getTotal() }}</h3>
-    <a href="" class="btn btn-primary">Proceed to checkout</a>
+    <a href="{{ route('cart.checkout') }}" class="btn btn-primary">Proceed to checkout</a>
 @endsection
